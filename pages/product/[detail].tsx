@@ -2,7 +2,7 @@ import { FetchAllDetails } from "@/api/Functions/function"
 import { Button, Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import { useQuery } from "react-query"
-import Link from "@mui/material";
+import {Link} from "@mui/material";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux-toolkit/ProuctSlice/ProductSlice";
 
@@ -14,17 +14,18 @@ export default function ProductDetails() {
     const router = useRouter()
     const { detail } = router.query;
 
-
-   // const disPatch=useDispatch();
+    const disPatch=useDispatch();
 
     const { data, isLoading } = useQuery({
         queryKey: ["Details"],
         queryFn: () => FetchAllDetails(Number(detail))
-
     });
     console.log("id ", data)
 
 
+
+// const handleCart=()=>{
+//     disPatch(addToCart(id))}
 
 
 
@@ -45,8 +46,9 @@ export default function ProductDetails() {
                 <Typography variant="body2" color="text.secondary">
                     {data?.description}  
                 </Typography>
-                <Button >
-                  AddTOCART
+                <Button  >
+                 
+                  <Link href={"/cart"}>ADD TO CART</Link>
                 </Button>
            </CardContent>
       </Card>
