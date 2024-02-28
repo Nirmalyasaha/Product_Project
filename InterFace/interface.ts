@@ -8,6 +8,8 @@ export interface Products {
   category: string
   image: string
   rating: Rating
+  total:number
+
 }
 
 export interface Rating {

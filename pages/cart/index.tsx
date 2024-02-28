@@ -9,41 +9,48 @@ import { useSelector } from "react-redux"
 
 
 
-export default function Cart(){
+export default function Cart() {
 
-    const cartItems=useAppSelector((state)=>state?.cartSlice)
-    console.log("Cart itmes",cartItems)
-    
-    const dispatch=useappDisPatch();
-    return(       
-        <>
-        <h1>Cart Page</h1>
-    
-        <TableContainer>
-            <Table>
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Id</TableCell>
-                        <TableCell>TITLE</TableCell>
-                        <TableCell>PRICE</TableCell>
-                        <TableCell>ACTIONS</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                {cartItems?.items.map((prod,indx)=>(
+    const cartItems = useAppSelector((state) => state?.cartSlice)
+    console.log("Cart itmes", cartItems)
 
-                   <TableRow key={indx}>
-                        <TableCell>{prod.id}</TableCell>
-                        <TableCell>{prod.title}</TableCell>
-                        <TableCell>{prod.price}</TableCell>
-                        <TableCell><Button onClick={()=>dispatch(removeCart(prod.id))}>REMOVE</Button></TableCell>
+    const dispatch = useappDisPatch();
 
-                    </TableRow>
-                ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+    // const getTotalPrice = () => {
+    //     return cartItems.items.reduce()
         
+    // }
+
+
+    return (
+        <>
+            <h1>Cart Page</h1>
+
+            <TableContainer>
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Id</TableCell>
+                            <TableCell>TITLE</TableCell>
+                            <TableCell>PRICE</TableCell>
+                            <TableCell>ACTIONS</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {cartItems?.items.map((prod, indx) => (
+
+                            <TableRow key={indx}>
+                                <TableCell>{prod.id}</TableCell>
+                                <TableCell>{prod.title}</TableCell>
+                                <TableCell>{prod.price}</TableCell>
+                                <TableCell><Button onClick={() => dispatch(removeCart(prod.id))}>REMOVE</Button></TableCell>
+
+
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
         </>
     )
 }

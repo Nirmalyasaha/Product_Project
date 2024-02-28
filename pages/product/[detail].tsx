@@ -46,8 +46,7 @@ export default function ProductDetails() {
                 <Typography variant="body2" color="text.secondary">
                     {data?.description}  
                 </Typography>
-                <Button  >
-                 
+                <Button  >                
                   <Link href={"/cart"}>ADD TO CART</Link>
                 </Button>
            </CardContent>

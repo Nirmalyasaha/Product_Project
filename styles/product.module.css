@@ -1,0 +1,24 @@
+.cardMain{
+    height: 360px;
+    width: 80%;
+    margin-top: 20px;
+}
+.IMGmain{
+    height: 60%;
+    width: auto;
+    
+}
+.TitleText{
+    font-size: 10px;
+}
+.Btn_Main{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px; 
+}
+.Btn1{
+    text-decoration:aliceblue;
+    background: rgb(83, 207, 245);
+    border-radius: 5px;
+    padding-block: 2px;
+}
