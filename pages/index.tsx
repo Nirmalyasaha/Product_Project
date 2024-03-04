@@ -59,6 +59,7 @@ export default function Index({ item }: { item: Products }) {
                                 variant="contained" 
                                 onClick={() => dispatch(addToCart({...item}))} 
                                 className={styles.Btn1}> 
+                   
                                  <Link href={"/cart"}>AddToCart</Link>
                                 </Button>
                                 </CardActions>

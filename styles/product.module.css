@@ -2,6 +2,7 @@
     height: 360px;
     width: 80%;
     margin-top: 20px;
+    box-shadow: 4px 4px 8px rgb(149, 235, 235);
 }
 .IMGmain{
     height: 60%;
@@ -9,7 +10,7 @@
     
 }
 .TitleText{
-    font-size: 10px;
+    font-size: 15px;
 }
 .Btn_Main{
     display: flex;
